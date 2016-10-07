@@ -25,7 +25,8 @@ define Package/mtk-linkit
 	+kmod-sdhci-mt7620 +kmod-usb-storage \
 	+kmod-video-core +kmod-video-uvc \
 	+kmod-sound-core +kmod-sound-mtk +madplay-alsa +alsa-utils \
-	+mtk-linkit-webui +mtk-sdk-wifi +tcpdump-mini
+	+mtk-linkit-webui +mtk-sdk-wifi +tcpdump-mini \
+	+ruby
 
   CATEGORY:=Base system
   DEFAULT:=y
@@ -42,7 +43,7 @@ endef
 
 define Package/mtk-linkit/install
 	$(INSTALL_DIR) $(1)/sbin
-	
+
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/pinmux $(1)/sbin/mt7688_pinmux
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/refclk $(1)/sbin/mt7688_reclk
 	$(CP) ./files/* $(1)
